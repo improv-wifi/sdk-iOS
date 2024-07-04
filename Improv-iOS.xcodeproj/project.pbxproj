@@ -11,6 +11,20 @@
 		42AA4CA22C35727800EA2E99 /* Improv_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42AA4C972C35727800EA2E99 /* Improv_iOS.framework */; };
 		42AA4CA72C35727800EA2E99 /* Improv_iOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42AA4CA62C35727800EA2E99 /* Improv_iOSTests.swift */; };
 		42AA4CA82C35727800EA2E99 /* Improv_iOS.h in Headers */ = {isa = PBXBuildFile; fileRef = 42AA4C9A2C35727800EA2E99 /* Improv_iOS.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		42AA4CB82C3572C400EA2E99 /* Improve_iOS_DemoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42AA4CB72C3572C400EA2E99 /* Improve_iOS_DemoApp.swift */; };
+		42AA4CBA2C3572C400EA2E99 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42AA4CB92C3572C400EA2E99 /* ContentView.swift */; };
+		42AA4CBC2C3572C500EA2E99 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 42AA4CBB2C3572C500EA2E99 /* Assets.xcassets */; };
+		42AA4CC02C3572C500EA2E99 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 42AA4CBF2C3572C500EA2E99 /* Preview Assets.xcassets */; };
+		42AA4CC52C3572D100EA2E99 /* Improv_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42AA4C972C35727800EA2E99 /* Improv_iOS.framework */; platformFilters = (ios, macos, xros, ); };
+		42AA4CC62C3572D100EA2E99 /* Improv_iOS.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 42AA4C972C35727800EA2E99 /* Improv_iOS.framework */; platformFilters = (ios, macos, xros, ); settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		42AA4CCD2C3574EC00EA2E99 /* BluetoothOperations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42AA4CCC2C3574EC00EA2E99 /* BluetoothOperations.swift */; };
+		42AA4CCF2C35757F00EA2E99 /* DeviceState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42AA4CCE2C35757F00EA2E99 /* DeviceState.swift */; };
+		42AA4CD12C3575AC00EA2E99 /* ErrorState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42AA4CD02C3575AC00EA2E99 /* ErrorState.swift */; };
+		42AA4CD32C3575EB00EA2E99 /* ImprovDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42AA4CD22C3575EB00EA2E99 /* ImprovDevice.swift */; };
+		42AA4CD52C35761E00EA2E99 /* ImprovManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42AA4CD42C35761E00EA2E99 /* ImprovManager.swift */; };
+		42AA4CD92C35763200EA2E99 /* RpcCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42AA4CD82C35763200EA2E99 /* RpcCommand.swift */; };
+		42AA4CDB2C357E2B00EA2E99 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42AA4CDA2C357E2B00EA2E99 /* Logger.swift */; };
+		42AA4CDE2C36A0F200EA2E99 /* DeviceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42AA4CDD2C36A0F200EA2E99 /* DeviceView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -21,7 +35,28 @@
 			remoteGlobalIDString = 42AA4C962C35727800EA2E99;
 			remoteInfo = "Improv-iOS";
 		};
+		42AA4CC72C3572D100EA2E99 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 42AA4C8E2C35727800EA2E99 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 42AA4C962C35727800EA2E99;
+			remoteInfo = "Improv-iOS";
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		42AA4CC92C3572D100EA2E99 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				42AA4CC62C3572D100EA2E99 /* Improv_iOS.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		42AA4C972C35727800EA2E99 /* Improv_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Improv_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -29,6 +64,20 @@
 		42AA4C9B2C35727800EA2E99 /* Improv_iOS.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = Improv_iOS.docc; sourceTree = "<group>"; };
 		42AA4CA12C35727800EA2E99 /* Improv-iOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Improv-iOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		42AA4CA62C35727800EA2E99 /* Improv_iOSTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Improv_iOSTests.swift; sourceTree = "<group>"; };
+		42AA4CB52C3572C400EA2E99 /* Improve-iOS-Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Improve-iOS-Demo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		42AA4CB72C3572C400EA2E99 /* Improve_iOS_DemoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Improve_iOS_DemoApp.swift; sourceTree = "<group>"; };
+		42AA4CB92C3572C400EA2E99 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		42AA4CBB2C3572C500EA2E99 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		42AA4CBD2C3572C500EA2E99 /* Improve_iOS_Demo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Improve_iOS_Demo.entitlements; sourceTree = "<group>"; };
+		42AA4CBF2C3572C500EA2E99 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		42AA4CCC2C3574EC00EA2E99 /* BluetoothOperations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BluetoothOperations.swift; sourceTree = "<group>"; };
+		42AA4CCE2C35757F00EA2E99 /* DeviceState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceState.swift; sourceTree = "<group>"; };
+		42AA4CD02C3575AC00EA2E99 /* ErrorState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorState.swift; sourceTree = "<group>"; };
+		42AA4CD22C3575EB00EA2E99 /* ImprovDevice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImprovDevice.swift; sourceTree = "<group>"; };
+		42AA4CD42C35761E00EA2E99 /* ImprovManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImprovManager.swift; sourceTree = "<group>"; };
+		42AA4CD82C35763200EA2E99 /* RpcCommand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RpcCommand.swift; sourceTree = "<group>"; };
+		42AA4CDA2C357E2B00EA2E99 /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
+		42AA4CDD2C36A0F200EA2E99 /* DeviceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +96,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		42AA4CB22C3572C400EA2E99 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				42AA4CC52C3572D100EA2E99 /* Improv_iOS.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -55,7 +112,9 @@
 			children = (
 				42AA4C992C35727800EA2E99 /* Improv-iOS */,
 				42AA4CA52C35727800EA2E99 /* Improv-iOSTests */,
+				42AA4CB62C3572C400EA2E99 /* Improve-iOS-Demo */,
 				42AA4C982C35727800EA2E99 /* Products */,
+				42AA4CC42C3572D100EA2E99 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -64,6 +123,7 @@
 			children = (
 				42AA4C972C35727800EA2E99 /* Improv_iOS.framework */,
 				42AA4CA12C35727800EA2E99 /* Improv-iOSTests.xctest */,
+				42AA4CB52C3572C400EA2E99 /* Improve-iOS-Demo.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -73,6 +133,13 @@
 			children = (
 				42AA4C9A2C35727800EA2E99 /* Improv_iOS.h */,
 				42AA4C9B2C35727800EA2E99 /* Improv_iOS.docc */,
+				42AA4CCC2C3574EC00EA2E99 /* BluetoothOperations.swift */,
+				42AA4CCE2C35757F00EA2E99 /* DeviceState.swift */,
+				42AA4CD02C3575AC00EA2E99 /* ErrorState.swift */,
+				42AA4CD22C3575EB00EA2E99 /* ImprovDevice.swift */,
+				42AA4CD42C35761E00EA2E99 /* ImprovManager.swift */,
+				42AA4CD82C35763200EA2E99 /* RpcCommand.swift */,
+				42AA4CDA2C357E2B00EA2E99 /* Logger.swift */,
 			);
 			path = "Improv-iOS";
 			sourceTree = "<group>";
@@ -83,6 +150,42 @@
 				42AA4CA62C35727800EA2E99 /* Improv_iOSTests.swift */,
 			);
 			path = "Improv-iOSTests";
+			sourceTree = "<group>";
+		};
+		42AA4CB62C3572C400EA2E99 /* Improve-iOS-Demo */ = {
+			isa = PBXGroup;
+			children = (
+				42AA4CB72C3572C400EA2E99 /* Improve_iOS_DemoApp.swift */,
+				42AA4CB92C3572C400EA2E99 /* ContentView.swift */,
+				42AA4CDC2C36A0E400EA2E99 /* Device */,
+				42AA4CBB2C3572C500EA2E99 /* Assets.xcassets */,
+				42AA4CBD2C3572C500EA2E99 /* Improve_iOS_Demo.entitlements */,
+				42AA4CBE2C3572C500EA2E99 /* Preview Content */,
+			);
+			path = "Improve-iOS-Demo";
+			sourceTree = "<group>";
+		};
+		42AA4CBE2C3572C500EA2E99 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				42AA4CBF2C3572C500EA2E99 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		42AA4CC42C3572D100EA2E99 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		42AA4CDC2C36A0E400EA2E99 /* Device */ = {
+			isa = PBXGroup;
+			children = (
+				42AA4CDD2C36A0F200EA2E99 /* DeviceView.swift */,
+			);
+			path = Device;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -135,6 +238,25 @@
 			productReference = 42AA4CA12C35727800EA2E99 /* Improv-iOSTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		42AA4CB42C3572C400EA2E99 /* Improve-iOS-Demo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 42AA4CC12C3572C500EA2E99 /* Build configuration list for PBXNativeTarget "Improve-iOS-Demo" */;
+			buildPhases = (
+				42AA4CB12C3572C400EA2E99 /* Sources */,
+				42AA4CB22C3572C400EA2E99 /* Frameworks */,
+				42AA4CB32C3572C400EA2E99 /* Resources */,
+				42AA4CC92C3572D100EA2E99 /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				42AA4CC82C3572D100EA2E99 /* PBXTargetDependency */,
+			);
+			name = "Improve-iOS-Demo";
+			productName = "Improve-iOS-Demo";
+			productReference = 42AA4CB52C3572C400EA2E99 /* Improve-iOS-Demo.app */;
+			productType = "com.apple.product-type.application";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -149,6 +271,9 @@
 						CreatedOnToolsVersion = 15.4;
 					};
 					42AA4CA02C35727800EA2E99 = {
+						CreatedOnToolsVersion = 15.4;
+					};
+					42AA4CB42C3572C400EA2E99 = {
 						CreatedOnToolsVersion = 15.4;
 					};
 				};
@@ -168,6 +293,7 @@
 			targets = (
 				42AA4C962C35727800EA2E99 /* Improv-iOS */,
 				42AA4CA02C35727800EA2E99 /* Improv-iOSTests */,
+				42AA4CB42C3572C400EA2E99 /* Improve-iOS-Demo */,
 			);
 		};
 /* End PBXProject section */
@@ -187,6 +313,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		42AA4CB32C3572C400EA2E99 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				42AA4CC02C3572C500EA2E99 /* Preview Assets.xcassets in Resources */,
+				42AA4CBC2C3572C500EA2E99 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -194,7 +329,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				42AA4CD52C35761E00EA2E99 /* ImprovManager.swift in Sources */,
+				42AA4CD12C3575AC00EA2E99 /* ErrorState.swift in Sources */,
+				42AA4CCF2C35757F00EA2E99 /* DeviceState.swift in Sources */,
+				42AA4CDB2C357E2B00EA2E99 /* Logger.swift in Sources */,
 				42AA4C9C2C35727800EA2E99 /* Improv_iOS.docc in Sources */,
+				42AA4CD32C3575EB00EA2E99 /* ImprovDevice.swift in Sources */,
+				42AA4CCD2C3574EC00EA2E99 /* BluetoothOperations.swift in Sources */,
+				42AA4CD92C35763200EA2E99 /* RpcCommand.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -206,6 +348,16 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		42AA4CB12C3572C400EA2E99 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				42AA4CBA2C3572C400EA2E99 /* ContentView.swift in Sources */,
+				42AA4CB82C3572C400EA2E99 /* Improve_iOS_DemoApp.swift in Sources */,
+				42AA4CDE2C36A0F200EA2E99 /* DeviceView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -213,6 +365,16 @@
 			isa = PBXTargetDependency;
 			target = 42AA4C962C35727800EA2E99 /* Improv-iOS */;
 			targetProxy = 42AA4CA32C35727800EA2E99 /* PBXContainerItemProxy */;
+		};
+		42AA4CC82C3572D100EA2E99 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			platformFilters = (
+				ios,
+				macos,
+				xros,
+			);
+			target = 42AA4C962C35727800EA2E99 /* Improv-iOS */;
+			targetProxy = 42AA4CC72C3572D100EA2E99 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -353,7 +515,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
@@ -362,7 +524,7 @@
 					"@executable_path/../Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 14.5;
+				MACOSX_DEPLOYMENT_TARGET = 12.0;
 				MARKETING_VERSION = 1.0;
 				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
 				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu17 gnu++20";
@@ -370,11 +532,13 @@
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = auto;
 				SKIP_INSTALL = YES;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx watchos watchsimulator xros xrsimulator";
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_INSTALL_OBJC_HEADER = NO;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = "1,2,4,7";
+				WATCHOS_DEPLOYMENT_TARGET = 8.0;
 			};
 			name = Debug;
 		};
@@ -394,7 +558,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
@@ -403,7 +567,7 @@
 					"@executable_path/../Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 14.5;
+				MACOSX_DEPLOYMENT_TARGET = 12.0;
 				MARKETING_VERSION = 1.0;
 				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
 				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu17 gnu++20";
@@ -411,11 +575,13 @@
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = auto;
 				SKIP_INSTALL = YES;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx watchos watchsimulator xros xrsimulator";
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_INSTALL_OBJC_HEADER = NO;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = "1,2,4,7";
+				WATCHOS_DEPLOYMENT_TARGET = 8.0;
 			};
 			name = Release;
 		};
@@ -423,6 +589,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALLOW_TARGET_PLATFORM_SPECIALIZATION = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = QMQYCKL255;
@@ -444,6 +611,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALLOW_TARGET_PLATFORM_SPECIALIZATION = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = QMQYCKL255;
@@ -458,6 +626,88 @@
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		42AA4CC22C3572C500EA2E99 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "Improve-iOS-Demo/Improve_iOS_Demo.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Improve-iOS-Demo/Preview Content\"";
+				DEVELOPMENT_TEAM = QMQYCKL255;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSBluetoothAlwaysUsageDescription = "We use bluetooth to scan for Improv devices";
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
+				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 12.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.nabucasa.Improve-iOS-Demo";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx xros xrsimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2,7";
+			};
+			name = Debug;
+		};
+		42AA4CC32C3572C500EA2E99 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "Improve-iOS-Demo/Improve_iOS_Demo.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Improve-iOS-Demo/Preview Content\"";
+				DEVELOPMENT_TEAM = QMQYCKL255;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSBluetoothAlwaysUsageDescription = "We use bluetooth to scan for Improv devices";
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
+				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 12.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.nabucasa.Improve-iOS-Demo";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx xros xrsimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2,7";
 			};
 			name = Release;
 		};
@@ -487,6 +737,15 @@
 			buildConfigurations = (
 				42AA4CAF2C35727800EA2E99 /* Debug */,
 				42AA4CB02C35727800EA2E99 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		42AA4CC12C3572C500EA2E99 /* Build configuration list for PBXNativeTarget "Improve-iOS-Demo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				42AA4CC22C3572C500EA2E99 /* Debug */,
+				42AA4CC32C3572C500EA2E99 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
