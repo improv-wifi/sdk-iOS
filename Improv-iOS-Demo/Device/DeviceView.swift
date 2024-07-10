@@ -1,6 +1,6 @@
 //
 //  DeviceView.swift
-//  Improve-iOS-Demo
+//  Improv-iOS-Demo
 //
 //  Created by Bruno Pantaleão on 04/07/2024.
 //
@@ -20,8 +20,8 @@ struct DeviceView: View {
             Text(peripheral.name ?? peripheral.identifier.uuidString)
             Text("Connected: \(improvManager.connectedDevice?.identifier == peripheral.identifier)")
             Text("Bluetooth State: \(improvManager.bluetoothState.description)")
-            Text("Device State: \(improvManager.deviceState ?? .none)")
-            Text("Error state: \(improvManager.errorState ?? .none)")
+            Text("Device State: \(String(describing: improvManager.deviceState ?? .none))")
+            Text("Error state: \(String(describing: improvManager.errorState ?? .none))")
             Text("Result: \(String(data: improvManager.lastResult ?? Data(), encoding: .ascii) ?? "--")")
 
             Section {

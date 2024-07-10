@@ -1,13 +1,3 @@
-# ``Improv_iOS``
+# ``iOS SDK for Improv Wi-Fi``
 
-<!--@START_MENU_TOKEN@-->Summary<!--@END_MENU_TOKEN@-->
-
-## Overview
-
-<!--@START_MENU_TOKEN@-->Text<!--@END_MENU_TOKEN@-->
-
-## Topics
-
-### <!--@START_MENU_TOKEN@-->Group<!--@END_MENU_TOKEN@-->
-
-- <!--@START_MENU_TOKEN@-->``Symbol``<!--@END_MENU_TOKEN@-->
+This library is for dealing with the complexities of the Bluetooth connection not creating any UI. You as the developer are responible for creating the UI/UX. A demo App is available in Improv-iOS-Demo.

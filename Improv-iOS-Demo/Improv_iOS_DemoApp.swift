@@ -1,6 +1,6 @@
 //
-//  Improve_iOS_DemoApp.swift
-//  Improve-iOS-Demo
+//  Improv_iOS_DemoApp.swift
+//  Improv-iOS-Demo
 //
 //  Created by Bruno Pantaleão on 03/07/2024.
 //
@@ -8,7 +8,7 @@
 import SwiftUI
 
 @main
-struct Improve_iOS_DemoApp: App {
+struct Improv_iOS_DemoApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()

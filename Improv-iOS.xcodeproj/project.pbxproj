@@ -11,7 +11,7 @@
 		42AA4CA22C35727800EA2E99 /* Improv_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42AA4C972C35727800EA2E99 /* Improv_iOS.framework */; };
 		42AA4CA72C35727800EA2E99 /* Improv_iOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42AA4CA62C35727800EA2E99 /* Improv_iOSTests.swift */; };
 		42AA4CA82C35727800EA2E99 /* Improv_iOS.h in Headers */ = {isa = PBXBuildFile; fileRef = 42AA4C9A2C35727800EA2E99 /* Improv_iOS.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		42AA4CB82C3572C400EA2E99 /* Improve_iOS_DemoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42AA4CB72C3572C400EA2E99 /* Improve_iOS_DemoApp.swift */; };
+		42AA4CB82C3572C400EA2E99 /* Improv_iOS_DemoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42AA4CB72C3572C400EA2E99 /* Improv_iOS_DemoApp.swift */; };
 		42AA4CBA2C3572C400EA2E99 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42AA4CB92C3572C400EA2E99 /* ContentView.swift */; };
 		42AA4CBC2C3572C500EA2E99 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 42AA4CBB2C3572C500EA2E99 /* Assets.xcassets */; };
 		42AA4CC02C3572C500EA2E99 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 42AA4CBF2C3572C500EA2E99 /* Preview Assets.xcassets */; };
@@ -65,10 +65,10 @@
 		42AA4CA12C35727800EA2E99 /* Improv-iOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Improv-iOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		42AA4CA62C35727800EA2E99 /* Improv_iOSTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Improv_iOSTests.swift; sourceTree = "<group>"; };
 		42AA4CB52C3572C400EA2E99 /* Improve-iOS-Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Improve-iOS-Demo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		42AA4CB72C3572C400EA2E99 /* Improve_iOS_DemoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Improve_iOS_DemoApp.swift; sourceTree = "<group>"; };
+		42AA4CB72C3572C400EA2E99 /* Improv_iOS_DemoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Improv_iOS_DemoApp.swift; sourceTree = "<group>"; };
 		42AA4CB92C3572C400EA2E99 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		42AA4CBB2C3572C500EA2E99 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		42AA4CBD2C3572C500EA2E99 /* Improve_iOS_Demo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Improve_iOS_Demo.entitlements; sourceTree = "<group>"; };
+		42AA4CBD2C3572C500EA2E99 /* Improv_iOS_Demo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Improv_iOS_Demo.entitlements; sourceTree = "<group>"; };
 		42AA4CBF2C3572C500EA2E99 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		42AA4CCC2C3574EC00EA2E99 /* BluetoothOperations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BluetoothOperations.swift; sourceTree = "<group>"; };
 		42AA4CCE2C35757F00EA2E99 /* DeviceState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceState.swift; sourceTree = "<group>"; };
@@ -112,7 +112,7 @@
 			children = (
 				42AA4C992C35727800EA2E99 /* Improv-iOS */,
 				42AA4CA52C35727800EA2E99 /* Improv-iOSTests */,
-				42AA4CB62C3572C400EA2E99 /* Improve-iOS-Demo */,
+				42AA4CB62C3572C400EA2E99 /* Improv-iOS-Demo */,
 				42AA4C982C35727800EA2E99 /* Products */,
 				42AA4CC42C3572D100EA2E99 /* Frameworks */,
 			);
@@ -152,17 +152,17 @@
 			path = "Improv-iOSTests";
 			sourceTree = "<group>";
 		};
-		42AA4CB62C3572C400EA2E99 /* Improve-iOS-Demo */ = {
+		42AA4CB62C3572C400EA2E99 /* Improv-iOS-Demo */ = {
 			isa = PBXGroup;
 			children = (
-				42AA4CB72C3572C400EA2E99 /* Improve_iOS_DemoApp.swift */,
+				42AA4CB72C3572C400EA2E99 /* Improv_iOS_DemoApp.swift */,
 				42AA4CB92C3572C400EA2E99 /* ContentView.swift */,
 				42AA4CDC2C36A0E400EA2E99 /* Device */,
 				42AA4CBB2C3572C500EA2E99 /* Assets.xcassets */,
-				42AA4CBD2C3572C500EA2E99 /* Improve_iOS_Demo.entitlements */,
+				42AA4CBD2C3572C500EA2E99 /* Improv_iOS_Demo.entitlements */,
 				42AA4CBE2C3572C500EA2E99 /* Preview Content */,
 			);
-			path = "Improve-iOS-Demo";
+			path = "Improv-iOS-Demo";
 			sourceTree = "<group>";
 		};
 		42AA4CBE2C3572C500EA2E99 /* Preview Content */ = {
@@ -353,7 +353,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				42AA4CBA2C3572C400EA2E99 /* ContentView.swift in Sources */,
-				42AA4CB82C3572C400EA2E99 /* Improve_iOS_DemoApp.swift in Sources */,
+				42AA4CB82C3572C400EA2E99 /* Improv_iOS_DemoApp.swift in Sources */,
 				42AA4CDE2C36A0F200EA2E99 /* DeviceView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -635,10 +635,12 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = "Improve-iOS-Demo/Improve_iOS_Demo.entitlements";
+				CODE_SIGN_ENTITLEMENTS = "Improv-iOS-Demo/Improv_iOS_Demo.entitlements";
+				CODE_SIGN_IDENTITY = "Apple Development";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"Improve-iOS-Demo/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"Improv-iOS-Demo/Preview Content\"";
 				DEVELOPMENT_TEAM = QMQYCKL255;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
@@ -659,8 +661,9 @@
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 12.0;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.nabucasa.Improve-iOS-Demo";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.nabucasa.Improv-iOS-Demo";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = auto;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx xros xrsimulator";
 				SUPPORTS_MACCATALYST = NO;
@@ -676,10 +679,12 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = "Improve-iOS-Demo/Improve_iOS_Demo.entitlements";
+				CODE_SIGN_ENTITLEMENTS = "Improv-iOS-Demo/Improv_iOS_Demo.entitlements";
+				CODE_SIGN_IDENTITY = "Apple Development";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"Improve-iOS-Demo/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"Improv-iOS-Demo/Preview Content\"";
 				DEVELOPMENT_TEAM = QMQYCKL255;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
@@ -700,8 +705,9 @@
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 12.0;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.nabucasa.Improve-iOS-Demo";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.nabucasa.Improv-iOS-Demo";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = auto;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx xros xrsimulator";
 				SUPPORTS_MACCATALYST = NO;
