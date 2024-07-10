@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		423373DB2C3ECD7500429B54 /* LICENSE.md in Resources */ = {isa = PBXBuildFile; fileRef = 423373DA2C3ECD7500429B54 /* LICENSE.md */; };
+		424E79CA2C3EBC6C00D95BE0 /* Improv-iOS.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 424E79C92C3EBC6C00D95BE0 /* Improv-iOS.podspec */; };
 		42AA4C9C2C35727800EA2E99 /* Improv_iOS.docc in Sources */ = {isa = PBXBuildFile; fileRef = 42AA4C9B2C35727800EA2E99 /* Improv_iOS.docc */; };
 		42AA4CA22C35727800EA2E99 /* Improv_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42AA4C972C35727800EA2E99 /* Improv_iOS.framework */; };
 		42AA4CA72C35727800EA2E99 /* Improv_iOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42AA4CA62C35727800EA2E99 /* Improv_iOSTests.swift */; };
@@ -59,6 +61,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		423373DA2C3ECD7500429B54 /* LICENSE.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = LICENSE.md; sourceTree = SOURCE_ROOT; };
+		424E79C92C3EBC6C00D95BE0 /* Improv-iOS.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Improv-iOS.podspec"; sourceTree = SOURCE_ROOT; };
 		42AA4C972C35727800EA2E99 /* Improv_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Improv_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		42AA4C9A2C35727800EA2E99 /* Improv_iOS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Improv_iOS.h; sourceTree = "<group>"; };
 		42AA4C9B2C35727800EA2E99 /* Improv_iOS.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = Improv_iOS.docc; sourceTree = "<group>"; };
@@ -131,6 +135,8 @@
 		42AA4C992C35727800EA2E99 /* Improv-iOS */ = {
 			isa = PBXGroup;
 			children = (
+				423373DA2C3ECD7500429B54 /* LICENSE.md */,
+				424E79C92C3EBC6C00D95BE0 /* Improv-iOS.podspec */,
 				42AA4C9A2C35727800EA2E99 /* Improv_iOS.h */,
 				42AA4C9B2C35727800EA2E99 /* Improv_iOS.docc */,
 				42AA4CCC2C3574EC00EA2E99 /* BluetoothOperations.swift */,
@@ -303,6 +309,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				423373DB2C3ECD7500429B54 /* LICENSE.md in Resources */,
+				424E79CA2C3EBC6C00D95BE0 /* Improv-iOS.podspec in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -504,10 +512,10 @@
 			buildSettings = {
 				ALLOW_TARGET_PLATFORM_SPECIALIZATION = YES;
 				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = QMQYCKL255;
+				DEVELOPMENT_TEAM = "";
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -530,6 +538,7 @@
 				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu17 gnu++20";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.nabucasa.Improv-iOS";
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = auto;
 				SKIP_INSTALL = YES;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx watchos watchsimulator xros xrsimulator";
@@ -547,10 +556,10 @@
 			buildSettings = {
 				ALLOW_TARGET_PLATFORM_SPECIALIZATION = YES;
 				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = QMQYCKL255;
+				DEVELOPMENT_TEAM = "";
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -573,6 +582,7 @@
 				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu17 gnu++20";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.nabucasa.Improv-iOS";
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = auto;
 				SKIP_INSTALL = YES;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx watchos watchsimulator xros xrsimulator";
