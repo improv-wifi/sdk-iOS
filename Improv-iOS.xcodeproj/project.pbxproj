@@ -7,11 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		420C42812C4005A40026B72C /* BluetoothManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 420C42802C4005A40026B72C /* BluetoothManager.swift */; };
+		420C42842C400FED0026B72C /* MockBluetoothManagerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 420C42832C400FED0026B72C /* MockBluetoothManagerDelegate.swift */; };
+		420C42862C40100F0026B72C /* MockBluetoothManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 420C42852C40100F0026B72C /* MockBluetoothManager.swift */; };
+		420C42882C4014BD0026B72C /* BluetoothUUIDs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 420C42872C4014BD0026B72C /* BluetoothUUIDs.swift */; };
+		420C428A2C4015370026B72C /* BluetoothUUIDsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 420C42892C4015370026B72C /* BluetoothUUIDsTests.swift */; };
+		420C428C2C4015E20026B72C /* ErrorStateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 420C428B2C4015E20026B72C /* ErrorStateTests.swift */; };
+		420C428E2C40162F0026B72C /* DeviceStateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 420C428D2C40162F0026B72C /* DeviceStateTests.swift */; };
+		420C42902C4016870026B72C /* RpcCommandTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 420C428F2C4016870026B72C /* RpcCommandTests.swift */; };
 		423373DB2C3ECD7500429B54 /* LICENSE.md in Resources */ = {isa = PBXBuildFile; fileRef = 423373DA2C3ECD7500429B54 /* LICENSE.md */; };
 		424E79CA2C3EBC6C00D95BE0 /* Improv-iOS.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 424E79C92C3EBC6C00D95BE0 /* Improv-iOS.podspec */; };
 		42AA4C9C2C35727800EA2E99 /* Improv_iOS.docc in Sources */ = {isa = PBXBuildFile; fileRef = 42AA4C9B2C35727800EA2E99 /* Improv_iOS.docc */; };
 		42AA4CA22C35727800EA2E99 /* Improv_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42AA4C972C35727800EA2E99 /* Improv_iOS.framework */; };
-		42AA4CA72C35727800EA2E99 /* Improv_iOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42AA4CA62C35727800EA2E99 /* Improv_iOSTests.swift */; };
+		42AA4CA72C35727800EA2E99 /* ImprovManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42AA4CA62C35727800EA2E99 /* ImprovManagerTests.swift */; };
 		42AA4CA82C35727800EA2E99 /* Improv_iOS.h in Headers */ = {isa = PBXBuildFile; fileRef = 42AA4C9A2C35727800EA2E99 /* Improv_iOS.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		42AA4CB82C3572C400EA2E99 /* Improv_iOS_DemoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42AA4CB72C3572C400EA2E99 /* Improv_iOS_DemoApp.swift */; };
 		42AA4CBA2C3572C400EA2E99 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42AA4CB92C3572C400EA2E99 /* ContentView.swift */; };
@@ -61,13 +69,21 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		420C42802C4005A40026B72C /* BluetoothManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BluetoothManager.swift; sourceTree = "<group>"; };
+		420C42832C400FED0026B72C /* MockBluetoothManagerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockBluetoothManagerDelegate.swift; sourceTree = "<group>"; };
+		420C42852C40100F0026B72C /* MockBluetoothManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockBluetoothManager.swift; sourceTree = "<group>"; };
+		420C42872C4014BD0026B72C /* BluetoothUUIDs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BluetoothUUIDs.swift; sourceTree = "<group>"; };
+		420C42892C4015370026B72C /* BluetoothUUIDsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BluetoothUUIDsTests.swift; sourceTree = "<group>"; };
+		420C428B2C4015E20026B72C /* ErrorStateTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorStateTests.swift; sourceTree = "<group>"; };
+		420C428D2C40162F0026B72C /* DeviceStateTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceStateTests.swift; sourceTree = "<group>"; };
+		420C428F2C4016870026B72C /* RpcCommandTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RpcCommandTests.swift; sourceTree = "<group>"; };
 		423373DA2C3ECD7500429B54 /* LICENSE.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = LICENSE.md; sourceTree = SOURCE_ROOT; };
 		424E79C92C3EBC6C00D95BE0 /* Improv-iOS.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Improv-iOS.podspec"; sourceTree = SOURCE_ROOT; };
 		42AA4C972C35727800EA2E99 /* Improv_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Improv_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		42AA4C9A2C35727800EA2E99 /* Improv_iOS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Improv_iOS.h; sourceTree = "<group>"; };
 		42AA4C9B2C35727800EA2E99 /* Improv_iOS.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = Improv_iOS.docc; sourceTree = "<group>"; };
 		42AA4CA12C35727800EA2E99 /* Improv-iOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Improv-iOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		42AA4CA62C35727800EA2E99 /* Improv_iOSTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Improv_iOSTests.swift; sourceTree = "<group>"; };
+		42AA4CA62C35727800EA2E99 /* ImprovManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImprovManagerTests.swift; sourceTree = "<group>"; };
 		42AA4CB52C3572C400EA2E99 /* Improve-iOS-Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Improve-iOS-Demo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		42AA4CB72C3572C400EA2E99 /* Improv_iOS_DemoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Improv_iOS_DemoApp.swift; sourceTree = "<group>"; };
 		42AA4CB92C3572C400EA2E99 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -111,6 +127,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		420C42822C400FE60026B72C /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				420C42832C400FED0026B72C /* MockBluetoothManagerDelegate.swift */,
+				420C42852C40100F0026B72C /* MockBluetoothManager.swift */,
+			);
+			path = Mocks;
+			sourceTree = "<group>";
+		};
 		42AA4C8D2C35727800EA2E99 = {
 			isa = PBXGroup;
 			children = (
@@ -144,6 +169,8 @@
 				42AA4CD02C3575AC00EA2E99 /* ErrorState.swift */,
 				42AA4CD22C3575EB00EA2E99 /* ImprovDevice.swift */,
 				42AA4CD42C35761E00EA2E99 /* ImprovManager.swift */,
+				420C42802C4005A40026B72C /* BluetoothManager.swift */,
+				420C42872C4014BD0026B72C /* BluetoothUUIDs.swift */,
 				42AA4CD82C35763200EA2E99 /* RpcCommand.swift */,
 				42AA4CDA2C357E2B00EA2E99 /* Logger.swift */,
 			);
@@ -153,7 +180,12 @@
 		42AA4CA52C35727800EA2E99 /* Improv-iOSTests */ = {
 			isa = PBXGroup;
 			children = (
-				42AA4CA62C35727800EA2E99 /* Improv_iOSTests.swift */,
+				420C42822C400FE60026B72C /* Mocks */,
+				42AA4CA62C35727800EA2E99 /* ImprovManagerTests.swift */,
+				420C42892C4015370026B72C /* BluetoothUUIDsTests.swift */,
+				420C428B2C4015E20026B72C /* ErrorStateTests.swift */,
+				420C428D2C40162F0026B72C /* DeviceStateTests.swift */,
+				420C428F2C4016870026B72C /* RpcCommandTests.swift */,
 			);
 			path = "Improv-iOSTests";
 			sourceTree = "<group>";
@@ -344,6 +376,8 @@
 				42AA4C9C2C35727800EA2E99 /* Improv_iOS.docc in Sources */,
 				42AA4CD32C3575EB00EA2E99 /* ImprovDevice.swift in Sources */,
 				42AA4CCD2C3574EC00EA2E99 /* BluetoothOperations.swift in Sources */,
+				420C42882C4014BD0026B72C /* BluetoothUUIDs.swift in Sources */,
+				420C42812C4005A40026B72C /* BluetoothManager.swift in Sources */,
 				42AA4CD92C35763200EA2E99 /* RpcCommand.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -352,7 +386,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				42AA4CA72C35727800EA2E99 /* Improv_iOSTests.swift in Sources */,
+				420C42862C40100F0026B72C /* MockBluetoothManager.swift in Sources */,
+				420C428E2C40162F0026B72C /* DeviceStateTests.swift in Sources */,
+				42AA4CA72C35727800EA2E99 /* ImprovManagerTests.swift in Sources */,
+				420C42902C4016870026B72C /* RpcCommandTests.swift in Sources */,
+				420C42842C400FED0026B72C /* MockBluetoothManagerDelegate.swift in Sources */,
+				420C428C2C4015E20026B72C /* ErrorStateTests.swift in Sources */,
+				420C428A2C4015370026B72C /* BluetoothUUIDsTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
