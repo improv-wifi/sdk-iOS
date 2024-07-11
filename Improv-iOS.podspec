@@ -5,7 +5,7 @@ Pod::Spec.new do |spec|
   spec.description  = "This library abstracts the bluetooth scanning for Improv devices and allow you to connect them to WiFi networks"
   spec.author    = "Improv"
 
-  spec.homepage     = "https://github.com/bgoncal/Improv-iOS.git"
+  spec.homepage     = "https://github.com/improv-wifi/sdk-iOS"
   spec.license      = { :type => 'Apache License, Version 2.0', :text => <<-LICENSE
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
@@ -20,7 +20,7 @@ Pod::Spec.new do |spec|
     limitations under the License.
     LICENSE
   }
-  spec.source       = { :git => "https://github.com/bgoncal/Improv-iOS.git", :tag => "#{spec.version}" }
+  spec.source       = { :git => "https://github.com/improv-wifi/sdk-iOS.git", :tag => "#{spec.version}" }
   spec.source_files  = "Improv-iOS/**/*.swift"
 
   spec.ios.deployment_target = "15.0"
