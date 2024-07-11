@@ -29,12 +29,16 @@ improvManager.sendWifi(ssid: ssid, password: password)
 
 // Listen for status updates
 // SwiftUI example
-VStack {
-  Text(peripheral.name ?? peripheral.identifier.uuidString)
-  Text("Connected: \(improvManager.connectedDevice?.identifier == peripheral.identifier)")
-  Text("Bluetooth State: \(improvManager.bluetoothState.description)")
-  Text("Device State: \(String(describing: improvManager.deviceState ?? .none))")
-  Text("Error state: \(String(describing: improvManager.errorState ?? .none))")
-  Text("Result: \(String(data: improvManager.lastResult ?? Data(), encoding: .ascii) ?? "--")")
+Text(peripheral.name ?? peripheral.identifier.uuidString)
+Text("Connected: \(improvManager.connectedDevice?.identifier == peripheral.identifier)")
+Text("Bluetooth State: \(improvManager.bluetoothState.description)")
+Text("Device State: \(String(describing: improvManager.deviceState ?? .none))")
+Text("Error state: \(String(describing: improvManager.errorState ?? .none))")
+if let result = improvManager.lastResult {
+    Section("Result strings") {
+        ForEach(result, id: \.self) { string in
+            Text(string)
+        }
+    }
 }
 ```
