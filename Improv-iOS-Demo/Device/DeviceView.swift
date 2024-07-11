@@ -22,7 +22,13 @@ struct DeviceView: View {
             Text("Bluetooth State: \(improvManager.bluetoothState.description)")
             Text("Device State: \(String(describing: improvManager.deviceState ?? .none))")
             Text("Error state: \(String(describing: improvManager.errorState ?? .none))")
-            Text("Result: \(String(data: improvManager.lastResult ?? Data(), encoding: .ascii) ?? "--")")
+            if let result = improvManager.lastResult {
+                Section("Result strings") {
+                    ForEach(result, id: \.self) { string in
+                        Text(string)
+                    }
+                }
+            }
 
             Section {
                 Button(action: {

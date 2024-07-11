@@ -24,7 +24,7 @@ public final class ImprovManager: NSObject, ObservableObject {
     @Published public var bluetoothState: CBManagerState = .unknown
     @Published public var errorState: ErrorState?
     @Published public var deviceState: DeviceState?
-    @Published public var lastResult: Data?
+    @Published public var lastResult: [String]?
     @Published public var foundDevices: [String : CBPeripheral] = [String: CBPeripheral]()
     @Published public var connectedDevice: CBPeripheral? {
         didSet {
@@ -238,11 +238,45 @@ extension ImprovManager: CBPeripheralDelegate {
                 }
             case uuidCharRpcResult:
                 Logger.main.info("Result changed to \(value).")
-                self.lastResult = value
+                let resultStrings = extractResultStrings(from: value)
+                #if DEBUG
+                print(resultStrings)
+                #endif
+                self.lastResult = resultStrings
             default:
                 break
             }
         }
+    }
+
+    private func extractResultStrings(from data: Data) -> [String]? {
+        // Ensure the data is at least 3 bytes long to read the first string length
+        guard data.count > 2 else { return nil }
+
+        var strings: [String] = []
+        var currentIndex = 2 // Start after the first two bytes
+
+        while currentIndex < data.count {
+            // Get the length of the current string
+            let stringLength = Int(data[currentIndex])
+            currentIndex += 1
+
+            // Ensure there are enough bytes left for the current string
+            guard currentIndex + stringLength <= data.count else { return strings }
+
+            // Extract the string data
+            let stringData = data.subdata(in: currentIndex..<(currentIndex + stringLength))
+            currentIndex += stringLength
+
+            // Convert the string data to a String and add it to the list
+            if let string = String(data: stringData, encoding: .utf8) {
+                strings.append(string)
+            } else {
+                return strings // Invalid string encoding, return strings previously decoded
+            }
+        }
+
+        return strings
     }
 
     public func peripheral(_ peripheral: CBPeripheral, didWriteValueFor characteristic: CBCharacteristic, error: Error?) {
