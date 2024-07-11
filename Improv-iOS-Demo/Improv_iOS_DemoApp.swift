@@ -6,12 +6,13 @@
 //
 
 import SwiftUI
+import Improv_iOS
 
 @main
 struct Improv_iOS_DemoApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ContentView<ImprovManager>()
         }
     }
 }

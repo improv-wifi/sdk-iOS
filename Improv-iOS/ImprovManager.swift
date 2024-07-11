@@ -3,12 +3,30 @@ import Combine
 import CoreBluetooth
 import OSLog
 
-public final class ImprovManager: NSObject, ObservableObject {
+public protocol ImprovManagerProtocol: ObservableObject {
+    var bluetoothState: CBManagerState { get }
+    var errorState: ErrorState? { get }
+    var deviceState: DeviceState? { get }
+    var lastResult: [String]? { get }
+    var foundDevices: [String : CBPeripheral] { get }
+    var scanInProgress: Bool { get }
+    var connectedDevice: CBPeripheral? { get }
+
+    func scan()
+    func stopScan()
+    func connectToDevice(_ peripheral: CBPeripheral)
+    func identifyDevice()
+    func sendWifi(ssid: String, password: String)
+}
+
+public final class ImprovManager: NSObject, ImprovManagerProtocol {
     enum State {
         case idle
         case result(devices: [String])
         case bluetoothOff
     }
+
+    public static var shared: any ImprovManagerProtocol = ImprovManager()
 
     private let uuidServiceProvision = CBUUID(string: "00467768-6228-2272-4663-277478268000")
     private let uuidCharCurrentState = CBUUID(string: "00467768-6228-2272-4663-277478268001")
@@ -21,12 +39,12 @@ public final class ImprovManager: NSObject, ObservableObject {
     private var pendingOperation: BleOperationType?
     private var bluetoothGatt: CBPeripheral?
 
-    @Published public var bluetoothState: CBManagerState = .unknown
-    @Published public var errorState: ErrorState?
-    @Published public var deviceState: DeviceState?
-    @Published public var lastResult: [String]?
-    @Published public var foundDevices: [String : CBPeripheral] = [String: CBPeripheral]()
-    @Published public var connectedDevice: CBPeripheral? {
+    @Published public private(set) var bluetoothState: CBManagerState = .unknown
+    @Published public private(set) var errorState: ErrorState?
+    @Published public private(set) var deviceState: DeviceState?
+    @Published public private(set) var lastResult: [String]?
+    @Published public private(set) var foundDevices: [String : CBPeripheral] = [String: CBPeripheral]()
+    @Published public private(set) var connectedDevice: CBPeripheral? {
         didSet {
             if connectedDevice == nil {
                 deviceState = nil
@@ -34,10 +52,10 @@ public final class ImprovManager: NSObject, ObservableObject {
             }
         }
     }
-    @Published public var scanInProgress = false
+    @Published public private(set) var scanInProgress = false
 
 
-    public override init() {
+    private override init() {
         super.init()
         self.centralManager = CBCentralManager(delegate: self, queue: nil)
     }
@@ -89,7 +107,7 @@ public final class ImprovManager: NSObject, ObservableObject {
         enqueueOperation(CharacteristicWrite(char: rpc, data: Data(commandArray)))
     }
 
-    func calculateChecksum(data: [UInt8]) -> UInt8 {
+    private func calculateChecksum(data: [UInt8]) -> UInt8 {
         var checksum: UInt8 = 0
         for byte in data {
             checksum = (checksum &+ byte) & 255 // Calculate and keep it within 0-255 range
@@ -238,11 +256,7 @@ extension ImprovManager: CBPeripheralDelegate {
                 }
             case uuidCharRpcResult:
                 Logger.main.info("Result changed to \(value).")
-                let resultStrings = extractResultStrings(from: value)
-                #if DEBUG
-                print(resultStrings)
-                #endif
-                self.lastResult = resultStrings
+                self.lastResult = extractResultStrings(from: value)
             default:
                 break
             }

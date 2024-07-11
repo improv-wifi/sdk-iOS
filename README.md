@@ -7,7 +7,7 @@ This library is for dealing with the complexities of the Bluetooth connection no
 You can check the demo app or follow that:
 
 ```
-var improvManager = ImprovManager()
+var improvManager = ImprovManager.shared
 
 // Start scanning for Improv devices
 improvManager.scan()

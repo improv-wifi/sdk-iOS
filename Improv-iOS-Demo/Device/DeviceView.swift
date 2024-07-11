@@ -9,8 +9,8 @@ import SwiftUI
 import CoreBluetooth
 import Improv_iOS
 
-struct DeviceView: View {
-    @EnvironmentObject private var improvManager: ImprovManager
+struct DeviceView<Manager>: View where Manager: ImprovManagerProtocol {
+    @EnvironmentObject private var improvManager: Manager
     @State private var ssid = ""
     @State private var password = ""
     let peripheral: CBPeripheral
