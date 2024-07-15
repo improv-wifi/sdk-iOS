@@ -4,6 +4,12 @@ This library is for dealing with the complexities of the Bluetooth connection no
 
 ## Quick start
 
+### Installation
+Cocoapods:
+```
+pod 'Improv-iOS'
+```
+
 You can check the demo app or follow that:
 
 ```
