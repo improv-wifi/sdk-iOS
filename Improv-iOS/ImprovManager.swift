@@ -18,6 +18,7 @@ public protocol ImprovManagerProtocol: ObservableObject {
     func connectToDevice(_ peripheral: CBPeripheral)
     func identifyDevice()
     func sendWifi(ssid: String, password: String)
+    func reset()
 }
 
 public protocol ImprovManagerDelegate: AnyObject {
@@ -34,6 +35,8 @@ public protocol ImprovManagerDelegate: AnyObject {
     func didUpdateErrorState(_ state: ErrorState?)
 
     func didReceiveResult(_ result: [String]?)
+
+    func didReset()
 }
 
 public final class ImprovManager: NSObject, ImprovManagerProtocol {
@@ -82,6 +85,8 @@ public final class ImprovManager: NSObject, ImprovManagerProtocol {
     public func stopScan() {
         bluetoothManager.stopScan()
         scanInProgress = false
+        foundDevices = [:]
+        delegate?.didUpdateFoundDevices(devices: foundDevices)
     }
 
     public func connectToDevice(_ peripheral: CBPeripheral) {
@@ -95,6 +100,18 @@ public final class ImprovManager: NSObject, ImprovManagerProtocol {
 
     public func sendWifi(ssid: String, password: String) {
         bluetoothManager.sendWifi(ssid: ssid, password: password)
+    }
+
+    public func reset() {
+        stopScan()
+        bluetoothState = bluetoothManager.state
+        errorState = nil
+        deviceState = nil
+        lastResult = nil
+        foundDevices = [String: CBPeripheral]()
+        connectedDevice = nil
+
+        delegate?.didReset()
     }
 }
 
