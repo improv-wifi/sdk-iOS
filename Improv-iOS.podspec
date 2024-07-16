@@ -1,6 +1,6 @@
 Pod::Spec.new do |spec|
   spec.name         = "Improv-iOS"
-  spec.version      = "0.0.1"
+  spec.version      = "0.0.2"
   spec.summary      = "Easily detect and connect Improv devices to WiFi networks in iOS"
   spec.description  = "This library abstracts the bluetooth scanning for Improv devices and allow you to connect them to WiFi networks"
   spec.author    = "Improv"

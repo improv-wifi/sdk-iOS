@@ -11,12 +11,29 @@ public protocol ImprovManagerProtocol: ObservableObject {
     var foundDevices: [String : CBPeripheral] { get }
     var scanInProgress: Bool { get }
     var connectedDevice: CBPeripheral? { get }
+    var delegate: ImprovManagerDelegate? { get set }
 
     func scan()
     func stopScan()
     func connectToDevice(_ peripheral: CBPeripheral)
     func identifyDevice()
     func sendWifi(ssid: String, password: String)
+}
+
+public protocol ImprovManagerDelegate: AnyObject {
+    func didUpdateBluetoohState(_ state: CBManagerState)
+
+    func didUpdateFoundDevices(devices: [String : CBPeripheral])
+
+    func didConnect(peripheral: CBPeripheral)
+
+    func didDisconnect(peripheral: CBPeripheral)
+
+    func didUpdateDeviceState(_ state: DeviceState?)
+
+    func didUpdateErrorState(_ state: ErrorState?)
+
+    func didReceiveResult(_ result: [String]?)
 }
 
 public final class ImprovManager: NSObject, ImprovManagerProtocol {
@@ -31,6 +48,7 @@ public final class ImprovManager: NSObject, ImprovManagerProtocol {
     )
 
     private var bluetoothManager: BluetoothManagerProtocol
+    weak public var delegate: ImprovManagerDelegate?
 
     @Published public private(set) var bluetoothState: CBManagerState = .unknown
     @Published public private(set) var errorState: ErrorState?
@@ -83,29 +101,36 @@ public final class ImprovManager: NSObject, ImprovManagerProtocol {
 extension ImprovManager: BluetoothManagerDelegate {
     func didUpdateBluetoohState(_ state: CBManagerState) {
         bluetoothState = state
+        delegate?.didUpdateBluetoohState(state)
     }
 
     func didFindNewDevice(peripheral: CBPeripheral) {
         foundDevices[peripheral.identifier.uuidString] = peripheral
+        delegate?.didUpdateFoundDevices(devices: foundDevices)
     }
 
     func didConnect(peripheral: CBPeripheral) {
         connectedDevice = peripheral
+        delegate?.didConnect(peripheral: peripheral)
     }
 
     func didDisconnect(peripheral: CBPeripheral) {
         connectedDevice = nil
+        delegate?.didDisconnect(peripheral: peripheral)
     }
 
     func didUpdateDeviceState(_ state: DeviceState?) {
         deviceState = state
+        delegate?.didUpdateDeviceState(state)
     }
 
     func didUpdateErrorState(_ state: ErrorState?) {
         errorState = state
+        delegate?.didUpdateErrorState(state)
     }
 
     func didReceiveResult(_ result: [String]?) {
         lastResult = result
+        delegate?.didReceiveResult(result)
     }
 }
