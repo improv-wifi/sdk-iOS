@@ -16,6 +16,7 @@ public protocol ImprovManagerProtocol: ObservableObject {
     func scan()
     func stopScan()
     func connectToDevice(_ peripheral: CBPeripheral)
+    func disconnectFromDevice(_ peripheral: CBPeripheral)
     func identifyDevice()
     func sendWifi(ssid: String, password: String)
     func reset()
@@ -90,8 +91,11 @@ public final class ImprovManager: NSObject, ImprovManagerProtocol {
     }
 
     public func connectToDevice(_ peripheral: CBPeripheral) {
-        stopScan()
         bluetoothManager.connectToDevice(peripheral)
+    }
+
+    public func disconnectFromDevice(_ peripheral: CBPeripheral) {
+        bluetoothManager.disconnectFromDevice(peripheral)
     }
 
     public func identifyDevice() {

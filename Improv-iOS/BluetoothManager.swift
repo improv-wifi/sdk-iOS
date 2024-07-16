@@ -26,6 +26,7 @@ protocol BluetoothManagerProtocol {
     func scan()
     func stopScan()
     func connectToDevice(_ peripheral: CBPeripheral)
+    func disconnectFromDevice(_ peripheral: CBPeripheral)
     func identifyDevice()
     func sendWifi(ssid: String, password: String)
 }
@@ -61,6 +62,10 @@ final class BluetoothManager: NSObject, BluetoothManagerProtocol {
 
     func connectToDevice(_ peripheral: CBPeripheral) {
         enqueueOperation(Connect(device: peripheral))
+    }
+
+    func disconnectFromDevice(_ peripheral: CBPeripheral) {
+        centralManager.cancelPeripheralConnection(peripheral)
     }
 
     func identifyDevice() {
