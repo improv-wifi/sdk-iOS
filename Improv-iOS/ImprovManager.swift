@@ -95,6 +95,7 @@ public final class ImprovManager: NSObject, ImprovManagerProtocol {
     }
 
     public func disconnectFromDevice(_ peripheral: CBPeripheral) {
+        connectedDevice = nil
         bluetoothManager.disconnectFromDevice(peripheral)
     }
 

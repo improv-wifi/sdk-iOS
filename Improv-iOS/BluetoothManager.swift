@@ -65,6 +65,7 @@ final class BluetoothManager: NSObject, BluetoothManagerProtocol {
     }
 
     func disconnectFromDevice(_ peripheral: CBPeripheral) {
+        bluetoothGatt = nil
         centralManager.cancelPeripheralConnection(peripheral)
     }
 
