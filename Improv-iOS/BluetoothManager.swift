@@ -27,8 +27,13 @@ protocol BluetoothManagerProtocol {
     func stopScan()
     func connectToDevice(_ peripheral: CBPeripheral)
     func disconnectFromDevice(_ peripheral: CBPeripheral)
-    func identifyDevice()
-    func sendWifi(ssid: String, password: String)
+    func identifyDevice() -> BluetoothManagerError?
+    func sendWifi(ssid: String, password: String) -> BluetoothManagerError?
+}
+
+public enum BluetoothManagerError: Error {
+    case deviceDisconnected
+    case serviceNotAvailable
 }
 
 final class BluetoothManager: NSObject, BluetoothManagerProtocol {
@@ -69,24 +74,30 @@ final class BluetoothManager: NSObject, BluetoothManagerProtocol {
         centralManager.cancelPeripheralConnection(peripheral)
     }
 
-    func identifyDevice() {
+    func identifyDevice() -> BluetoothManagerError? {
         guard let gatt = bluetoothGatt else {
-            fatalError("Not Connected to a Device!")
+            return .deviceDisconnected
         }
         if let rpc = gatt.services?.first(where: { $0.uuid == BluetoothUUIDs.serviceProvision })?.characteristics?.first(where: { $0.uuid == BluetoothUUIDs.charRpc }) {
             sendRpc(rpc, command: .identify, data: [])
+            return nil
+        } else {
+            return .serviceNotAvailable
         }
     }
 
-    func sendWifi(ssid: String, password: String) {
+    func sendWifi(ssid: String, password: String) -> BluetoothManagerError? {
         guard let gatt = bluetoothGatt else {
-            fatalError("Not Connected to a Device!")
+            return .deviceDisconnected
         }
         if let rpc = gatt.services?.first(where: { $0.uuid == BluetoothUUIDs.serviceProvision })?.characteristics?.first(where: { $0.uuid == BluetoothUUIDs.charRpc }) {
             let encodedSsid = Array(ssid.utf8)
             let encodedPassword = Array(password.utf8)
             let data = [UInt8(encodedSsid.count)] + encodedSsid + [UInt8(encodedPassword.count)] + encodedPassword
             sendRpc(rpc, command: .sendWifi, data: data)
+            return nil
+        } else {
+            return .serviceNotAvailable
         }
     }
 

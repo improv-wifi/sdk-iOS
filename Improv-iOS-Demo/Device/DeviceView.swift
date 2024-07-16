@@ -39,7 +39,9 @@ struct DeviceView<Manager>: View where Manager: ImprovManagerProtocol {
             }
             Section {
                 Button(action: {
-                    improvManager.identifyDevice()
+                    if let error = improvManager.identifyDevice() {
+                        print("ERROR while identify command: \(error)")
+                    }
                 }, label: {
                     Text("Identify")
                 })
@@ -50,7 +52,9 @@ struct DeviceView<Manager>: View where Manager: ImprovManagerProtocol {
                 TextField("SSID", text: $ssid)
                 TextField("Password", text: $password)
                 Button(action: {
-                    improvManager.sendWifi(ssid: ssid, password: password)
+                    if let error = improvManager.sendWifi(ssid: ssid, password: password) {
+                        print("ERROR while sendWifi command: \(error)")
+                    }
                 }, label: {
                     Text("Connect to Wifi")
                 })

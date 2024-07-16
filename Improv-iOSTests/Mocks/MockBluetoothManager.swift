@@ -10,6 +10,7 @@ import CoreBluetooth
 @testable import Improv_iOS
 
 class MockBluetoothManager: BluetoothManagerProtocol {
+    
     weak var delegate: BluetoothManagerDelegate?
     var state: CBManagerState = .unknown
 
@@ -18,6 +19,7 @@ class MockBluetoothManager: BluetoothManagerProtocol {
     var connectToDeviceCalled = false
     var identifyDeviceCalled = false
     var sendWifiCalled = false
+    var disconnectFromDeviceCalled = false
 
     var lastPeripheral: CBPeripheral?
     var lastSSID: String?
@@ -36,13 +38,19 @@ class MockBluetoothManager: BluetoothManagerProtocol {
         lastPeripheral = peripheral
     }
 
-    func identifyDevice() {
-        identifyDeviceCalled = true
+    func disconnectFromDevice(_ peripheral: CBPeripheral) {
+        disconnectFromDeviceCalled = true
     }
 
-    func sendWifi(ssid: String, password: String) {
+    func identifyDevice() -> Improv_iOS.BluetoothManagerError? {
+        identifyDeviceCalled = true
+        return nil
+    }
+
+    func sendWifi(ssid: String, password: String) -> Improv_iOS.BluetoothManagerError? {
         sendWifiCalled = true
         lastSSID = ssid
         lastPassword = password
+        return nil
     }
 }
