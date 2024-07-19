@@ -24,20 +24,28 @@ public protocol ImprovManagerProtocol: ObservableObject {
 
 public protocol ImprovManagerDelegate: AnyObject {
     func didUpdateBluetoohState(_ state: CBManagerState)
-
     func didUpdateFoundDevices(devices: [String : CBPeripheral])
-
     func didConnect(peripheral: CBPeripheral)
-
     func didDisconnect(peripheral: CBPeripheral)
-
     func didUpdateDeviceState(_ state: DeviceState?)
-
     func didUpdateErrorState(_ state: ErrorState?)
-
     func didReceiveResult(_ result: [String]?)
-
     func didReset()
+    func didUpdateIsScanning(_ isScanning: Bool)
+    func didFailScanningBluetoothNotAvailable()
+}
+
+public extension ImprovManagerDelegate {
+    func didUpdateBluetoohState(_ state: CBManagerState) {}
+    func didUpdateFoundDevices(devices: [String : CBPeripheral]) {}
+    func didConnect(peripheral: CBPeripheral) {}
+    func didDisconnect(peripheral: CBPeripheral) {}
+    func didUpdateDeviceState(_ state: DeviceState?) {}
+    func didUpdateErrorState(_ state: ErrorState?) {}
+    func didReceiveResult(_ result: [String]?) {}
+    func didReset() {}
+    func didUpdateIsScanning(_ isScanning: Bool) {}
+    func didFailScanningBluetoothNotAvailable() {}
 }
 
 public final class ImprovManager: NSObject, ImprovManagerProtocol {
@@ -76,16 +84,11 @@ public final class ImprovManager: NSObject, ImprovManagerProtocol {
     }
 
     public func scan() {
-        bluetoothState = bluetoothManager.state
-        if bluetoothState == .poweredOn {
-            bluetoothManager.scan()
-            scanInProgress = true
-        }
+        bluetoothManager.scan()
     }
 
     public func stopScan() {
         bluetoothManager.stopScan()
-        scanInProgress = false
         foundDevices = [:]
         delegate?.didUpdateFoundDevices(devices: foundDevices)
     }
@@ -155,4 +158,14 @@ extension ImprovManager: BluetoothManagerDelegate {
         lastResult = result
         delegate?.didReceiveResult(result)
     }
+
+    func didUpdateIsScanning(_ isScanning: Bool) {
+        scanInProgress = isScanning
+        delegate?.didUpdateIsScanning(isScanning)
+    }
+
+    func didFailScanningBluetoothNotAvailable() {
+        delegate?.didFailScanningBluetoothNotAvailable()
+    }
+
 }

@@ -17,6 +17,8 @@ protocol BluetoothManagerDelegate: AnyObject {
     func didConnect(peripheral: CBPeripheral)
     func didDisconnect(peripheral: CBPeripheral)
     func didReceiveResult(_ result: [String]?)
+    func didUpdateIsScanning(_ isScanning: Bool)
+    func didFailScanningBluetoothNotAvailable()
 }
 
 protocol BluetoothManagerProtocol {
@@ -38,31 +40,45 @@ public enum BluetoothManagerError: Error {
 
 final class BluetoothManager: NSObject, BluetoothManagerProtocol {
 
-    private var centralManager: CBCentralManager
+    private var centralManager: CBCentralManager?
     weak var delegate: BluetoothManagerDelegate?
 
     var state: CBManagerState {
-        centralManager.state
+        centralManager?.state ?? .unknown
+    }
+
+    var isScanning: Bool {
+        centralManager?.isScanning ?? false
     }
 
     private var bluetoothGatt: CBPeripheral?
     private var operationQueue = [BleOperationType]()
     private var pendingOperation: BleOperationType?
 
-    override init() {
-        self.centralManager = CBCentralManager()
-        super.init()
-
-        centralManager.delegate = self
-    }
+    private var scanAsSoonAsPoweredOn = false
+    private var scanObservation: NSKeyValueObservation?
 
     func scan() {
-        let scanOptions: [String: Any] = [CBCentralManagerScanOptionAllowDuplicatesKey: false]
-        centralManager.scanForPeripherals(withServices: [BluetoothUUIDs.serviceProvision], options: scanOptions)
+        if centralManager == nil {
+            scanAsSoonAsPoweredOn = true
+            centralManager = CBCentralManager(delegate: self, queue: .main)
+        } else if centralManager?.state == .poweredOn {
+            scanObservation = centralManager?.observe(\.isScanning, options: [.new]) { [weak self] (manager, change) in
+                if let isScanning = change.newValue {
+                    self?.delegate?.didUpdateIsScanning(isScanning)
+                }
+            }
+
+            let scanOptions: [String: Any] = [CBCentralManagerScanOptionAllowDuplicatesKey: false]
+            centralManager?.scanForPeripherals(withServices: [BluetoothUUIDs.serviceProvision], options: scanOptions)
+        } else {
+            Logger.main.info("User has not allowed bluetooth permission or bluetooth unavailable. Bluetooth state: \(String(describing: self.centralManager?.state.rawValue))")
+            delegate?.didFailScanningBluetoothNotAvailable()
+        }
     }
 
     func stopScan() {
-        centralManager.stopScan()
+        centralManager?.stopScan()
     }
 
     func connectToDevice(_ peripheral: CBPeripheral) {
@@ -71,7 +87,7 @@ final class BluetoothManager: NSObject, BluetoothManagerProtocol {
 
     func disconnectFromDevice(_ peripheral: CBPeripheral) {
         bluetoothGatt = nil
-        centralManager.cancelPeripheralConnection(peripheral)
+        centralManager?.cancelPeripheralConnection(peripheral)
     }
 
     func identifyDevice() -> BluetoothManagerError? {
@@ -138,7 +154,7 @@ final class BluetoothManager: NSObject, BluetoothManagerProtocol {
 
         switch operation {
         case let connect as Connect:
-            centralManager.connect(connect.device, options: nil)
+            centralManager?.connect(connect.device, options: nil)
         case let write as CharacteristicWrite:
             bluetoothGatt?.writeValue(write.data, for: write.char, type: .withResponse)
         case let read as CharacteristicRead:
@@ -180,6 +196,10 @@ final class BluetoothManager: NSObject, BluetoothManagerProtocol {
 
 extension BluetoothManager: CBCentralManagerDelegate {
     public func centralManagerDidUpdateState(_ central: CBCentralManager) {
+        if central.state == .poweredOn, scanAsSoonAsPoweredOn {
+            scanAsSoonAsPoweredOn = false
+            scan()
+        }
         delegate?.didUpdateBluetoohState(central.state)
     }
 

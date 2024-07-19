@@ -24,19 +24,11 @@ class ImprovManagerTests: XCTestCase {
         )
     }
 
-    func test_scan_whileBluetoothOff_doesNothing() {
-        mockBluetoothManager.state = .poweredOff
-        sut.scan()
-
-        XCTAssertFalse(mockBluetoothManager.scanCalled)
-    }
-
     func test_scan_whileBluetoothOn_callsScan() {
         mockBluetoothManager.state = .poweredOn
         sut.scan()
 
         XCTAssertTrue(mockBluetoothManager.scanCalled)
-        XCTAssertTrue(sut.scanInProgress)
     }
 
     func test_stopScan_callsStopScan() {

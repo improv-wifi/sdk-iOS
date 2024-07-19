@@ -17,6 +17,8 @@ final class MockBluetoothManagerDelegate: BluetoothManagerDelegate {
     var didConnectCalled = false
     var didDisconnectCalled = false
     var didReceiveResultCalled = false
+    var didUpdateIsScanningCalled = false
+    var didFailScanningBluetoothNotAvailableCalled = false
 
     var lastBluetoothState: CBManagerState?
     var lastDeviceState: DeviceState?
@@ -58,4 +60,14 @@ final class MockBluetoothManagerDelegate: BluetoothManagerDelegate {
         didReceiveResultCalled = true
         lastResult = result
     }
+
+    func didUpdateIsScanning(_ isScanning: Bool) {
+        didUpdateIsScanningCalled = true
+
+    }
+
+    func didFailScanningBluetoothNotAvailable() {
+        didFailScanningBluetoothNotAvailableCalled = true
+    }
+
 }
