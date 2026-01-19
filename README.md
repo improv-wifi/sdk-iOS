@@ -5,7 +5,19 @@ This library is for dealing with the complexities of the Bluetooth connection no
 ## Quick start
 
 ### Installation
-Cocoapods:
+
+**Swift Package Manager:**
+
+Add the following to your `Package.swift` file:
+```swift
+dependencies: [
+    .package(url: "https://github.com/improv-wifi/sdk-iOS.git", branch: "main")
+]
+```
+
+Or in Xcode: File → Add Package Dependencies → Enter `https://github.com/improv-wifi/sdk-iOS.git`
+
+**CocoaPods:**
 ```
 pod 'Improv-iOS'
 ```
