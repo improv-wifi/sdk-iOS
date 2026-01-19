@@ -194,6 +194,7 @@ final class BluetoothManager: NSObject, BluetoothManagerProtocol {
     }
 }
 
+@available(macOS 11.0, iOS 14.0, watchOS 7.0, *)
 extension BluetoothManager: CBCentralManagerDelegate {
     public func centralManagerDidUpdateState(_ central: CBCentralManager) {
         if central.state == .poweredOn, scanAsSoonAsPoweredOn {
@@ -227,6 +228,7 @@ extension BluetoothManager: CBCentralManagerDelegate {
     }
 }
 
+@available(macOS 11.0, iOS 14.0, watchOS 7.0, *)
 extension BluetoothManager: CBPeripheralDelegate {
     public func peripheral(_ peripheral: CBPeripheral, didDiscoverCharacteristicsFor service: CBService, error: (any Error)?) {
         Logger.main.info("didDiscoverCharacteristicsFor service: \(service)")
